@@ -86,6 +86,25 @@ public:
 
 	Drug& operator-=(int quantity);
 
+	/// <summary>	Equality operator. </summary>
+	///
+	/// <remarks>	Administrator, 4/10/2020. </remarks>
+	///
+	/// <param name="d1">	The first instance to compare. </param>
+	/// <param name="d2">	The second instance to compare. </param>
+	///
+	/// <returns>	True if the parameters are considered equivalent. </returns>
+
+	friend bool operator ==(const Drug& d1, const Drug& d2);
+
+	/// <summary>	Sets a quantity. </summary>
+	///
+	/// <remarks>	Administrator, 4/10/2020. </remarks>
+	///
+	/// <param name="_quantity">	The quantity. </param>
+
+	void setQuantity(double _quantity);
+
 
 
 };

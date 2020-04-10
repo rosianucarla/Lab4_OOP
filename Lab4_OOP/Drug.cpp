@@ -61,3 +61,14 @@ Drug& Drug::operator-=(int quantity)
 }
 
 
+
+
+void Drug::setQuantity(double _quantity)
+{ 
+	this->quantity = _quantity;
+}
+
+bool operator==(const Drug& d1, const Drug& d2)
+{
+	return (d1.name == d2.name && d1.concentration == d2.concentration);
+}
