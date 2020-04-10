@@ -49,7 +49,9 @@ public:
 	void undo();
 
 	/// <summary>	Redoes this. 
-	/// 			 </summary>
+	/// 			
+	/// 			 
+	/// 			   </summary>
 	///
 	/// <remarks>	Administrator, 4/10/2020. </remarks>
 
