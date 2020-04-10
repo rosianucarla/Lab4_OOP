@@ -10,7 +10,7 @@
 class Repository
 {
 private:
-	std::vector <Drug> drug;
+	std::vector <Drug> drugs;
 	std::string lastOperation = "";
 	std::string lastUndo = "";
 	Drug lastDrug = Drug("", 0, 0, 0);
@@ -58,5 +58,42 @@ public:
 
 	void redo();
 
+	/// <summary>	Gets the drug. </summary>
+	///
+	/// <remarks>	Administrator, 4/10/2020. </remarks>
+	///
+	/// <returns>	The drug. </returns>
+
+	std::vector<Drug> getDrugs() const;
+
+	/// <summary>	Gets drug by index. </summary>
+	///
+	/// <remarks>	Administrator, 4/10/2020. </remarks>
+	///
+	/// <param name="index">	Zero-based index of the. </param>
+	///
+	/// <returns>	The drug by index. </returns>
+
+	Drug getDrug_byIndex(int index) const;
+
+	/// <summary>	Gets the size. </summary>
+	///
+	/// <remarks>	Administrator, 4/10/2020. </remarks>
+	///
+	/// <returns>	The size. </returns>
+
+	double getSize()const;
+
+	/// <summary>	Sort by name. </summary>
+	///
+	/// <remarks>	Administrator, 4/10/2020. </remarks>
+
+	void sortByName();
+
+	/// <summary>	Sort by preis. </summary>
+	///
+	/// <remarks>	Administrator, 4/10/2020. </remarks>
+
+	void sortByPrice();
 };
 
