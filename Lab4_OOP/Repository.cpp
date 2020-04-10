@@ -2,6 +2,12 @@
 #include <algorithm>
 using namespace std;
 
+/// <summary>	Adds a drug. </summary>
+///
+/// <remarks>	Administrator, 4/10/2020. </remarks>
+///
+/// <param name="_drug">	The drug. </param>
+
 void Repository::add_drug(Drug _drug)
 {
 	lastOperation = "add";
@@ -17,6 +23,12 @@ void Repository::add_drug(Drug _drug)
 	if (found == false)
 		drug.push_back(_drug);
 }
+
+/// <summary>	Deletes the drug described by _drug. </summary>
+///
+/// <remarks>	Administrator, 4/10/2020. </remarks>
+///
+/// <param name="_drug">	The drug. </param>
 
 void Repository::delete_drug(Drug _drug)
 {
@@ -34,6 +46,13 @@ void Repository::delete_drug(Drug _drug)
 	}
 }
 
+/// <summary>	Edit drug. </summary>
+///
+/// <remarks>	Administrator, 4/10/2020. </remarks>
+///
+/// <param name="_drug">  	The drug. </param>
+/// <param name="newDrug">	The new drug. </param>
+
 void Repository::edit_drug(Drug _drug, Drug newDrug)
 {
 	lastOperation = "edit";
@@ -46,6 +65,10 @@ void Repository::edit_drug(Drug _drug, Drug newDrug)
 			drug[i].setQuantity(newDrug.getQuantity());
 		}
 }
+
+/// <summary>	Undoes this.  </summary>
+///
+/// <remarks>	Administrator, 4/10/2020. </remarks>
 
 void Repository::undo()
 {
@@ -64,6 +87,30 @@ void Repository::undo()
 		lastOperation = "";
 		lastUndo = "edit";
 	}
+}
+
+/// <summary>	Redoes this.  </summary>
+///
+/// <remarks>	Administrator, 4/10/2020. </remarks>
+
+void Repository::redo()
+{
+	if (lastUndo == "add") {
+		delete_drug(lastDrug);
+		lastOperation = "";
+		lastUndo = "";
+	}
+	if (lastUndo == "delete") {
+		add_drug(lastDrug);
+		lastOperation = "";
+		lastUndo = "";
+	}
+	if (lastUndo == "edit") {
+		edit_drug(newDrug,lastDrug);
+		lastOperation = "";
+		lastUndo = "";
+	}
+	
 }
 
 
