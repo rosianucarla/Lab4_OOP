@@ -33,3 +33,37 @@ void Repository::delete_drug(Drug _drug)
 		}
 	}
 }
+
+void Repository::edit_drug(Drug _drug, Drug newDrug)
+{
+	lastOperation = "edit";
+	lastDrug = _drug;
+	for(std::size_t i=0;i<drug.size();++i)
+		if (drug[i] == _drug) {
+			drug[i].setName(newDrug.getName());
+			drug[i].setConcentration(newDrug.getConcentration());
+			drug[i].setPrice(newDrug.getPrice());
+			drug[i].setQuantity(newDrug.getQuantity());
+		}
+}
+
+void Repository::undo()
+{
+	if (lastOperation == "add") {
+		delete_drug(lastDrug);
+		lastOperation = "";
+		lastUndo = "delete";
+	}
+	if (lastOperation == "delete") {
+		add_drug(lastDrug);
+		lastOperation = "";
+		lastUndo = "add";
+	}
+	if (lastOperation == "edit") {
+		edit_drug(newDrug, lastDrug);
+		lastOperation = "";
+		lastUndo = "edit";
+	}
+}
+
+

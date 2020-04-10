@@ -103,7 +103,31 @@ public:
 	///
 	/// <param name="_quantity">	The quantity. </param>
 
-	void setQuantity(double _quantity);
+	void setQuantity(int _quantity);
+
+	/// <summary>	Sets a name. </summary>
+	///
+	/// <remarks>	Administrator, 4/10/2020. </remarks>
+	///
+	/// <param name="_name">	The name. </param>
+
+	void setName(std::string _name);
+
+	/// <summary>	Sets a concentration. </summary>
+	///
+	/// <remarks>	Administrator, 4/10/2020. </remarks>
+	///
+	/// <param name="_concentration">	The concentration. </param>
+
+	void setConcentration(double _concentration);
+
+	/// <summary>	Sets a price. </summary>
+	///
+	/// <remarks>	Administrator, 4/10/2020. </remarks>
+	///
+	/// <param name="_price">	The price. </param>
+
+	void setPrice(double _price);
 
 
 

@@ -63,9 +63,24 @@ Drug& Drug::operator-=(int quantity)
 
 
 
-void Drug::setQuantity(double _quantity)
+void Drug::setQuantity(int _quantity)
 { 
 	this->quantity = _quantity;
+}
+
+void Drug::setName(std::string _name)
+{
+	this->name = _name;
+}
+
+void Drug::setConcentration(double _concentration)
+{
+	this->concentration = _concentration;
+}
+
+void Drug::setPrice(double _price)
+{
+	this->price = _price;
 }
 
 bool operator==(const Drug& d1, const Drug& d2)

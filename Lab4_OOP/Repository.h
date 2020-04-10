@@ -38,9 +38,10 @@ public:
 	///
 	/// <remarks>	Administrator, 4/10/2020. </remarks>
 	///
-	/// <param name="drug">	The drug. </param>
+	/// <param name="drug">   	The drug. </param>
+	/// <param name="newDrug">	The new drug. </param>
 
-	void edit_drug(Drug drug);
+	void edit_drug(Drug drug, Drug newDrug);
 
 	/// <summary>	Undoes this.  </summary>
 	///
@@ -51,7 +52,7 @@ public:
 	/// <summary>	Redoes this. 
 	/// 			
 	/// 			 
-	/// 			   </summary>
+	///  </summary>
 	///
 	/// <remarks>	Administrator, 4/10/2020. </remarks>
 
