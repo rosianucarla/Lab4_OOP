@@ -3,9 +3,9 @@
 
 using namespace std;
 
-Drug::Drug(std::string name, double concetration, int quantity, double price)
+Drug::Drug(std::string name, double concentration, int quantity, double price)
 {
-	if (concetration <= 0)
+	if (concentration <= 0)
 		throw exception("The concentration must be a positive number");
 
 	if (quantity < 0)
